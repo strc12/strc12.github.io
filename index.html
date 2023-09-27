@@ -1,2 +1,37 @@
-Hello World
-I'm a turnip
+// Function to calculate the average of specified numbers
+function calculateAverage() {
+  // Prompt the user for the number of values to average
+  const numberOfValues = parseInt(prompt("Enter the number of values to average:"));
+
+  // Check if the input is a valid number
+  if (isNaN(numberOfValues) || numberOfValues <= 0) {
+    alert("Please enter a valid positive number.");
+    return;
+  }
+
+  // Create an array to store the numbers
+  const numbers = [];
+
+  // Prompt the user to input the specified number of numbers
+  for (let i = 0; i < numberOfValues; i++) {
+    const value = parseFloat(prompt(`Enter value ${i + 1}:`));
+    if (!isNaN(value)) {
+      numbers.push(value);
+    } else {
+      alert("Invalid input. Please enter a valid number.");
+      i--; // Decrement the loop counter to re-enter the value
+    }
+  }
+
+  // Calculate the sum of the numbers
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+  // Calculate the average
+  const average = sum / numberOfValues;
+
+  // Display the result
+  alert(`The average of ${numberOfValues} numbers is: ${average}`);
+}
+
+// Call the function to calculate the average
+calculateAverage();
