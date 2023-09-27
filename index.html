@@ -1,37 +1,52 @@
-// Function to calculate the average of specified numbers
-function calculateAverage() {
-  // Prompt the user for the number of values to average
-  const numberOfValues = parseInt(prompt("Enter the number of values to average:"));
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Calculator</title>
+</head>
+<body>
+    <h1>Average Calculator</h1>
 
-  // Check if the input is a valid number
-  if (isNaN(numberOfValues) || numberOfValues <= 0) {
-    alert("Please enter a valid positive number.");
-    return;
-  }
+    <p>Enter the number of values you want to average, and then input the values:</p>
 
-  // Create an array to store the numbers
-  const numbers = [];
+    <button onclick="calculateAverage()">Calculate Average</button>
 
-  // Prompt the user to input the specified number of numbers
-  for (let i = 0; i < numberOfValues; i++) {
-    const value = parseFloat(prompt(`Enter value ${i + 1}:`));
-    if (!isNaN(value)) {
-      numbers.push(value);
-    } else {
-      alert("Invalid input. Please enter a valid number.");
-      i--; // Decrement the loop counter to re-enter the value
-    }
-  }
+    <script>
+        // Function to calculate the average of specified numbers
+        function calculateAverage() {
+            // Prompt the user for the number of values to average
+            const numberOfValues = parseInt(prompt("Enter the number of values to average:"));
 
-  // Calculate the sum of the numbers
-  const sum = numbers.reduce((acc, num) => acc + num, 0);
+            // Check if the input is a valid number
+            if (isNaN(numberOfValues) || numberOfValues <= 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
 
-  // Calculate the average
-  const average = sum / numberOfValues;
+            // Create an array to store the numbers
+            const numbers = [];
 
-  // Display the result
-  alert(`The average of ${numberOfValues} numbers is: ${average}`);
-}
+            // Prompt the user to input the specified number of numbers
+            for (let i = 0; i < numberOfValues; i++) {
+                const value = parseFloat(prompt(`Enter value ${i + 1}:`));
+                if (!isNaN(value)) {
+                    numbers.push(value);
+                } else {
+                    alert("Invalid input. Please enter a valid number.");
+                    i--; // Decrement the loop counter to re-enter the value
+                }
+            }
 
-// Call the function to calculate the average
-calculateAverage();
+            // Calculate the sum of the numbers
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+            // Calculate the average
+            const average = sum / numberOfValues;
+
+            // Display the result
+            alert(`The average of ${numberOfValues} numbers is: ${average.toFixed(2)}`);
+        }
+    </script>
+</body>
+</html>
