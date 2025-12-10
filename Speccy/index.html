@@ -1,49 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speccy - System Information Tool</title>
-    <link rel="stylesheet" href="styles.css">   
-    
-    <script src="/Speccy/emu/js/jdataview.js"></script>
-    <script src="/Speccy/emu/js/jsspeccy-core.min.js"></script>
-    <style>
-    #speccy {
-        image-rendering: optimizeSpeed;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -o-crisp-edges;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        image-rendering: pixelated;
-        -ms-interpolation-mode: nearest-neighbor;
-    }
-</style>
-
-</head>
-tst
-<div id="speccy"></div>
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
     <head>
-        <title>My wonderful page</title>
-        <script src="jdataview.js"></script>
-        <script src="jsspeccy-core.min.js"></script>
-        
-        <script>
-            function go() {
-                var jsspeccy = JSSpeccy('speccy', {
-                    'autostart': false,
-                    'autoload': true,
-                    'scaleFactor': 1,
-                    'loadFile': 'http://jsspeccy.zxdemo.org/games/manic_miner.z80'
-                });
+        <title>JSSpeccy v3</title>
+        <script src="/speccy/jsspeccy/jsspeccy.js"></script>
+        <style>
+            body {
+                background-color: #444;
             }
-        </script>
+            #jsspeccy {
+                width: 640px;
+                margin: auto;
+                background-color: white;
+            }
+        </style>
+        
+
     </head>
-    <body onload="go()">
-        <div id="speccy"></div>
+    <body onload="emu = JSSpeccy(document.getElementById('jsspeccy'), {zoom: 2, sandbox: false})">
+        <div id="jsspeccy"></div>
     </body>
-</html>
 </html>
