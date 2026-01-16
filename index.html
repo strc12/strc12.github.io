@@ -40,7 +40,7 @@
     }
 
     h1 {
-      font-size: 2.6rem;
+      font-size: 1.6rem;
       margin-bottom: 16px;
       color: var(--accent);
       text-shadow: 0 0 8px rgba(0, 255, 213, 0.6);
@@ -76,6 +76,7 @@
       background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.12), transparent 70%);
       opacity: 0;
       transition: opacity 0.2s ease;
+      pointer-events: none; /* allow clicks to pass through */
     }
 
     .card:hover {
@@ -91,6 +92,8 @@
       text-decoration: none;
       color: var(--text);
       display: block;
+      position: relative;
+      z-index: 1; /* ensure link is above visual effects */
     }
 
     .card h2 {
@@ -133,14 +136,14 @@
 
     <section class="links">
       <div class="card">
-        <a href="./speccy/">
+        <a href="./speccy/index.html">
           <h2>ZX Spectrum</h2>
           <span>8‑bit classics • Load tapes • Pixel perfection</span>
         </a>
       </div>
 
       <div class="card">
-        <a href="./emulator/">
+        <a href="./emulator/index.html">
           <h2>Console Emulator</h2>
           <span>NES • SNES • Mega Drive • Arcade vibes</span>
         </a>
