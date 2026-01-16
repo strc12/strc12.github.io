@@ -1,8 +1,155 @@
 <!doctype html>
-<html>          
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Retro Games Hub</title>
 
-    
-    <body>
-        <a href="\speccy\">Spectrum Emulator</a>
-        <a href="\emulator\">console Emulator</a>
-    </body> 
+  <!-- Google Font for a retro vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: #141a2e;
+      --accent: #00ffd5;
+      --accent2: #ff3cac;
+      --text: #e6e6eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #1b2140, var(--bg));
+      color: var(--text);
+      font-family: 'Press Start 2P', system-ui, monospace;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      padding: 24px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 16px;
+      color: var(--accent);
+      text-shadow: 0 0 8px rgba(0, 255, 213, 0.6);
+    }
+
+    p {
+      font-size: 0.7rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+      color: #cfd3ff;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #1b2245, var(--card));
+      border-radius: 16px;
+      padding: 28px 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.12), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+    }
+
+    .card h2 {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      color: var(--accent2);
+      text-shadow: 0 0 6px rgba(255, 60, 172, 0.6);
+    }
+
+    .card span {
+      font-size: 0.6rem;
+      color: #b8bcff;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.55rem;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>Retro Games Hub</h1>
+    <p>
+      Fire up classic games just like it’s the 80s and 90s again.
+      Choose an emulator below and start playing instantly.
+    </p>
+
+    <section class="links">
+      <div class="card">
+        <a href="/speccy/">
+          <h2>ZX Spectrum</h2>
+          <span>8‑bit classics • Load tapes • Pixel perfection</span>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="/emulator/">
+          <h2>Console Emulator</h2>
+          <span>NES • SNES • Mega Drive • Arcade vibes</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      Press START to play 🎮
+    </footer>
+  </main>
+</body>
+</html>
