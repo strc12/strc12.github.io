@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Calculator</title>
+</head>
+<body>
+    <h1>Average Calculator</h1>
+
+    <p>Enter the number of values you want to average, and then input the values:</p>
+
+    <input type="number" id="numberOfValues" placeholder="Enter the number of values">
+    <button onclick="calculateAverage()">Calculate Average</button>
+
+    <script>
+        // Function to calculate the average of specified numbers
+        function calculateAverage() {
+            // Get the number of values from the input field
+            const numberOfValues = parseInt(document.getElementById("numberOfValues").value);
+
+            // Check if the input is a valid number
+            if (isNaN(numberOfValues) || numberOfValues <= 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
+
+            // Initialize the running total to 0
+            let total = 0;
+
+            // Prompt the user to input the specified number of numbers
+            for (let i = 0; i < numberOfValues; i++) {
+                const value = parseFloat(prompt(`Enter value ${i + 1}:`));
+                if (!isNaN(value)) {
+                    total += value;
+                } else {
+                    alert("Invalid input. Please enter a valid number.");
+                    i--; // Decrement the loop counter to re-enter the value
+                }
+            }
+
+            // Calculate the average
+            const average = total / numberOfValues;
+
+            // Display the result
+            alert(`The average of ${numberOfValues} numbers is: ${average.toFixed(2)}`);
+        }
+    </script>
+</body>
+</html>
